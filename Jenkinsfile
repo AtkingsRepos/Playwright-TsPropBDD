@@ -38,16 +38,22 @@ steps{
 echo "Functional Test success"
 }
 }
-stage('Generate Cucumber HTML report'){
-        steps{
+// stage('Generate Cucumber HTML report'){
+//         steps{
       
-    cucumberReporter("html", {
-      outputFile: "cucumber-report/report.html",
-    }),
+//     cucumberReporter("html", {
+//       outputFile: "cucumber-report/report.html",
+//     }),
   
        
-}
-}
+// }
+//}
+post {
+                always {
+                    // Archive HTML report as a Jenkins artifact
+                    archiveArtifacts "cucumber-report/report.html",
+                }
+            }
 }
 }
 
