@@ -41,8 +41,8 @@ echo "Smoke Test success"
 stage('Generate Cucumber HTML report'){
         steps{
         cucumber buildStatus:"UNSTABLE",
-        fileIncludePattern: "**/cucumber-report.json",
-        jsonReportDirectory: "test-results/"
+        fileIncludePattern: "**/cucumber-report",
+        //jsonReportDirectory: "cucumber-report/"
        
 }
 }
