@@ -44,8 +44,8 @@ publishHTML([
 allowMissing: false,
 alwaysLinkToLastBuild: false,
 keepAll: true,
-reportDir: 'path/to/your/cucumber/report',
-reportFiles: 'index.html',
+reportDir: 'cucumber-report',
+reportFiles: 'report.html',
 reportName: 'Cucumber HTML Report'
 ])
 }
