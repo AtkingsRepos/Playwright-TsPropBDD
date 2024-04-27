@@ -49,7 +49,7 @@ echo "Functional Test success"
 // }
 //}
 stage ("Generating report"){
-                always {
+               steps {
                     archiveArtifacts "cucumber-report/report.html"
                 }
             }
