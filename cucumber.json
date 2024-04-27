@@ -1,3 +1,12 @@
 {
-  "format": ["html:cucumber-report/report.html"]
+  "default": {
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    },
+    "dryRun": false,
+    "format": [
+      "html:test-results/report/cucumber-report.html",
+      "json:test-results/report/cucumber-report.json"
+    ]
+  }
 }
