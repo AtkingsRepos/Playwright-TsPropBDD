@@ -2,6 +2,14 @@
  
 #  ./notes.txt
 .env/
+*.playwright/auth/admin_auth.json
+# /playwright/auth/admin_auth.json/
+# playwright/auth/admin_auth.json
+# *./playwright/**.json
+# playwright
+# playwright/
+*./playwright/auth/admin_auth.json/
+
 
 # # precess.env.*/
 # # *.playwright-report/
@@ -10,15 +18,13 @@
 
 **/config/env.ts
 /test-results/
-*./playwright/auth/admin_auth.json/
-*./playwright/**.json
-*./playwright/
+
 
 *.txt
 # .runTest.bat
 # # *.playwright-report
 # # .blob-report
-# # *.playwright/.cache
+*.playwright/.cache
 
 *.bat
 *.env
@@ -159,10 +165,6 @@ dist
 
 # tests
 test-results
-playwright/auth
-/playwright/auth/admin_auth.json
-**./playwright/**.json/
-**./playwright/**.json/
 config
 hooks/
 playwright-report

@@ -1,6 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
 import { defineBddConfig, cucumberReporter } from "playwright-bdd";
-//import { faker } from "@faker-js/faker";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -9,6 +8,7 @@ const testDir = defineBddConfig({
   require: ["**/steps-definition/**.ts"],
   importTestFrom: "src/tests/fixtures/fixtures.ts",
 });
+
 const authFile = "src/playwright/auth/admin_auth.json";
 export default defineConfig({
   testDir,
@@ -18,8 +18,17 @@ export default defineConfig({
     }),
   ],
   fullyParallel: false,
-  retries: 0,
+  retries: 1,
   workers: 1,
+  use: {
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    //trace: "on-first-retry",
+    headless: false,
+    //viewport: null,//{ width: 1920, height: 1040 },
+    actionTimeout: 10 * 1000,
+    ignoreHTTPSErrors: true,
+  },
   projects: [
     // Setup project
     //{ name: "setup", testDir: "./", testMatch: /.*\.setup\.ts/ },
@@ -94,76 +103,26 @@ export default defineConfig({
       },
       //dependencies: ["setup"],
     },
-    {
-      name: "webkit",
-      use: {
-        ...devices["Desktop Safari"],
-        // Use prepared auth state.
-        storageState: authFile,
-        bypassCSP: true,
-        testIdAttribute: "pw-test-id",
-        contextOptions: {
-          screen: {
-            width: 1920,
-            height: 1040,
-          },
-          viewport: {
-            width: 1920,
-            height: 1040,
-          },
-        },
-        //     // dependencies: ["setup"],
-      },
-    },
-    //// {
-    //   name: "firefox",
+    // {
+    //   name: "webkit",
     //   use: {
-    //     ...devices["Desktop Firefox"],
+    //     ...devices["Desktop Safari"],
     //     // Use prepared auth state.
     //     storageState: authFile,
+    //     bypassCSP: true,
+    //     testIdAttribute: "pw-test-id",
+    //     contextOptions: {
+    //       screen: {
+    //         width: 1280,
+    //         height: 720,
+    //       },
+    //       viewport: {
+    //         width: 1280,
+    //         height: 720,
+    //       },
+    //     },
+    //     //     // dependencies: ["setup"],
     //   },
-    //   //dependencies: ["setup"],
     // },
   ],
-  // projects: [
-  //   {
-  //     name: "chromium",
-  //     use: {
-  //       ...devices["Desktop Chrome"],
-  //       viewport: { width: 1280, height: 720 },
-  //     },
-  //   },
-  //   // {
-  //   //   name: "firefox",
-  //   //   use: {
-  //   //     ...devices["Desktop Firefox"],
-  //   //     viewport: { width: 1280, height: 720 },
-  //   //   },
-  //   // },
-  //   {
-  //     name: "webkit",
-  //     use: {
-  //       ...devices["Desktop Safari"],
-  //     },
-  //   },
-  //   {
-  //     name: "Microsoft Edge",
-  //     use: { ...devices["Desktop Edge"], channel: "msedge" },
-  //   },
-  //   {
-  //     name: "Google Chrome",
-  //     use: { ...devices["Desktop Chrome"], channel: "chrome" },
-  //   },
-  // ],
-
-  use: {
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    screenshot: "only-on-failure",
-    video: "retain-on-failure",
-    //trace: "on-first-retry",
-    headless: false,
-    //viewport: null,//{ width: 1920, height: 1040 },
-    actionTimeout: 90000,
-    ignoreHTTPSErrors: true,
-  },
 });

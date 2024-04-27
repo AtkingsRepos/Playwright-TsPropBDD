@@ -24,7 +24,7 @@ echo " running Smoke test"
 echo "Smoke Test success"
 }
 }
-stage('Sanity Test'){
+stage('regression Test'){
 steps{
 bat ' npm run addcourses'
 bat 'npm run checkGrades'
@@ -32,10 +32,10 @@ echo " running Smoke test"
 echo "Smoke Test success"
 }
 }
-stage('Functional Test'){
+stage('e2e test'){
 steps{
- bat 'npm run regression'
-echo "Functional Test success"
+ bat 'npm run test'
+echo "Functional End2End Test success"
 }
 }
 stage('Generate Cucumber HTML report'){

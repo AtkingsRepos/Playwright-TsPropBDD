@@ -6,6 +6,7 @@ import SiteNavigation from "../../tests/pages/siteNavigation";
 import SiteAdministrationPage from "../../tests/pages/siteAdministrationPage";
 import GradesPage from "../../tests/pages/gradesPage";
 import LandingPage from "../../tests/pages/LandingPage";
+
 type pages = {
   loginPage: LoginPage;
   gradesPage: GradesPage;

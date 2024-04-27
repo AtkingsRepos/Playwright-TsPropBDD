@@ -14,7 +14,12 @@
     "prod-test": "npx bddgen && cross-env ENV=prod npx playwright test --headed",
     "watch:bdd": "nodemon -w ./features -w ./steps -e feature,js,ts --exec 'npx bddgen'",
     "watch:pw": "playwright test --ui",
-    "watch": "run-p watch:*"
+    "watch": "run-p watch:*",
+    "smoke": "cucumber-js test  --tags @Smoke",
+    "checkGrades": "cucumber-js test --tags @CheckGrades",
+    "addcourses": "cucumber-js test  --tags @AddCourses",
+    "Setup": "cucumber-js test --tags @Setup",
+    "regression": "cucumber-js test --tags @Regression "
   },
   "devDependencies": {
     "@cucumber/html-formatter": "21.3.0",
