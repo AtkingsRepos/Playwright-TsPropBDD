@@ -24,7 +24,7 @@ echo " running Smoke test"
 echo "Smoke Test success"
 }
 }
-stage('regression Test'){
+stage('Sanity Test'){
 steps{
 bat ' npm run addcourses'
 bat 'npm run checkGrades'
@@ -32,17 +32,17 @@ echo " running Smoke test"
 echo "Smoke Test success"
 }
 }
-// stage('e2e test'){
-// steps{
-//  bat 'npm run test'
-// echo "Functional End2End Test success"
-// }
-// }
+stage('Functional Test'){
+steps{
+ bat 'npm run regression'
+echo "Functional Test success"
+}
+}
 stage('Generate Cucumber HTML report'){
         steps{
         cucumber buildStatus:"UNSTABLE",
-        fileIncludePattern: "**/cucumber-report",
-        jsonReportDirectory: "cucumber-report/"
+        fileIncludePattern: "**/cucumber-report.json",
+        jsonReportDirectory: "test-results/"
        
 }
 }
