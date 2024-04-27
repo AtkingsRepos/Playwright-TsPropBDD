@@ -1,5 +1,3 @@
-
-
 import { createBdd } from "playwright-bdd";
 import { test } from "src/tests/fixtures/fixtures";
 import { expect } from "@playwright/test";
@@ -10,7 +8,9 @@ const { Given, When, Then } = createBdd(test);
 const username = process.env["ADMIN_USER1"];
 const password = process.env["ADMIN_USER1_PASSWORD"];
 const URL = process.env["APP_URL"];
+
 const authFile = "src/playwright/auth/admin_auth.json";
+
 Given(
   "As a User, I navigate to the moodle login webpage",
   async ({ loginPage, page }) => {
@@ -42,7 +42,7 @@ Then("I should be logged in", async ({ loginPage, page }) => {
   const pagetitle = await loginPage.getPageTitle();
   await expect(pagetitle).toEqual("Dashboard | Taribo-Elixir");
   console.log(`>>>>>>>>>page title is :",${pagetitle} `);
-  console.log(">>>>>>>> Thanks !!!!!")
+  console.log(">>>>>>>> Thanks !!!!!");
 
   // const text = node.textContent;
 });
