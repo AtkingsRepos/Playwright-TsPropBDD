@@ -48,14 +48,8 @@ reportDir: 'path/to/your/cucumber/report',
 reportFiles: 'index.html',
 reportName: 'Cucumber HTML Report'
 ])
-
 }
 }
-
-//     }),
-  
-       
-// }
-//}
+}}
 
 
