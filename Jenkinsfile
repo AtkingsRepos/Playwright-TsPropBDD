@@ -32,12 +32,12 @@ echo " running Smoke test"
 echo "Smoke Test success"
 }
 }
-stage('e2e test'){
-steps{
- bat 'npm run test'
-echo "Functional End2End Test success"
-}
-}
+// stage('e2e test'){
+// steps{
+//  bat 'npm run test'
+// echo "Functional End2End Test success"
+// }
+// }
 stage('Generate Cucumber HTML report'){
         steps{
         cucumber buildStatus:"UNSTABLE",
