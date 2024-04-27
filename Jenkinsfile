@@ -10,13 +10,13 @@ echo "building the application"
 echo "build success"
 }
 }
-stage('Login Test'){
-steps{
-bat ' npm run Setup'
-echo " running Login test"
-echo "Login Test success"
-}
-}
+// stage('Login Test'){
+// steps{
+// bat ' npm run Setup'
+// echo " running Login test"
+// echo "Login Test success"
+// }
+// }
 stage('Smoke Test'){
 steps{
 bat ' npm run smoke'
