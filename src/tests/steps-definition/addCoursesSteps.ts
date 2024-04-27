@@ -1,10 +1,9 @@
 import { createBdd } from "playwright-bdd";
-import { test } from "src/tests/fixtures/fixtures";
+import { test } from "../fixtures/fixtures";
 import { expect } from "@playwright/test";
 const { Given, When, Then } = createBdd(test);
 
-Given("I am on the Site Administration page",
-  async ({ siteNavigation, page }) => {
+Given("I am on the Site Administration page", async ({ siteNavigation, page }) => {
     await siteNavigation.navigateToSiteAdministrationPage();
     await page.waitForLoadState();
   }

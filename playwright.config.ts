@@ -32,7 +32,7 @@ export default defineConfig({
   },
   projects: [
     //Setup project
-    { name: "setup", testDir: "./", testMatch: /.*\.setup\.ts/ },
+    //{ name: "setup", testDir: "./", testMatch: /.*\.setup\.ts/ },
 
     {
       name: "chromium",
