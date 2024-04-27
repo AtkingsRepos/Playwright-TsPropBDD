@@ -40,11 +40,11 @@ echo "Functional Test success"
 }
 stage('Generate Cucumber HTML report'){
         steps{
-        reporter: [
+      
     cucumberReporter("html", {
       outputFile: "cucumber-report/report.html",
     }),
-  ],
+  
        
 }
 }
