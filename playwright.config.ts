@@ -3,8 +3,6 @@ import { defineBddConfig, cucumberReporter } from "playwright-bdd";
 import dotenv from "dotenv";
 dotenv.config();
 
-
-
 const authFile = "src/playwright/auth/admin_auth.json";
 
 const testDir = defineBddConfig({
@@ -13,9 +11,7 @@ const testDir = defineBddConfig({
   importTestFrom: "src/tests/fixtures/fixtures.ts",
 });
 
-
 export default defineConfig({
-  
   testDir,
   reporter: [
     cucumberReporter("html", {
@@ -44,24 +40,24 @@ export default defineConfig({
         ...devices["Desktop Chrome"],
 
         storageState: authFile,
-        // bypassCSP: true,
-        // channel: "chrome",
-        // testIdAttribute: "pw-test-id",
-        // contextOptions: {
-        //   screen: {
-        //     width: 1920,
-        //     height: 1040,
-        //   },
-        // },
-        // viewport: {
-        //   width: 1920,
-        //   height: 1040,
-        // },
+        bypassCSP: true,
+        channel: "chrome",
+        testIdAttribute: "pw-test-id",
+        contextOptions: {
+          screen: {
+            width: 1920,
+            height: 1040,
+          },
+        },
+        viewport: {
+          width: 1920,
+          height: 1040,
+        },
       },
 
       // Use prepared auth state.
 
-      dependencies: ["setup"],
+      //dependencies: ["setup"],
     },
 
     // {
