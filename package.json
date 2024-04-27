@@ -15,11 +15,11 @@
     "watch:bdd": "nodemon -w ./features -w ./steps -e feature,js,ts --exec 'npx bddgen'",
     "watch:pw": "playwright test --ui",
     "watch": "run-p watch:*",
-    "smoke": "npx bddgen && npx playwright test --grep @Smoke",
-    "checkGrades": "npx bddgen && npx playwright test --grep @CheckGrades",
-    "addcourses": "npx bddgen && npx playwright test --grep @AddCourses",
-    "Setup": "npx bddgen && npx playwright test --grep @Setup",
-    "regression": "npx bddgen && npx playwright test --grep @Regression "
+    "smoke": "npx playwright test --grep @Smoke",
+    "checkGrades": "npx playwright test --grep @CheckGrades",
+    "addcourses": "npx playwright test --grep @AddCourses",
+    "Setup": "npx playwright test --grep @Setup",
+    "regression": "npx playwright test --grep @Regression "
   },
   "devDependencies": {
     "@cucumber/html-formatter": "21.3.0",
