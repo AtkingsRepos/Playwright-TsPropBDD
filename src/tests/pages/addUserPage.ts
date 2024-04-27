@@ -1,7 +1,9 @@
 import { Page, Locator } from "@playwright/test";
-import { getPage } from "../../hooks/hooks";
-//import BasePage from "../pages/basePage";
-//import { ICreateLog } from "@cucumber/cucumber/lib/runtime/attachment_manager/index.js";
+import { createBdd } from "playwright-bdd";
+import { test } from "src/tests/fixtures/fixtures";
+// import { getPage } from "../../hooks/hooks";
+// //import BasePage from "../pages/basePage";
+// //import { ICreateLog } from "@cucumber/cucumber/lib/runtime/attachment_manager/index.js";
 
 export default class AddUserPage {
   protected readonly addNewUserLink: Locator;
@@ -18,6 +20,7 @@ export default class AddUserPage {
 
   constructor(protected page: Page) {
     this.page = page;
+
     this.addNewUserLink = page.getByRole("link", { name: "Add a new user" });
     this.usernameField = page.getByLabel("Username", { exact: true });
     this.newPasswordField = page.getByRole("link", {
@@ -91,11 +94,11 @@ export default class AddUserPage {
   ) {
     //await this.clickAddNewUserLink();
     await this.usernameField.fill(username);
-    await getPage().waitForTimeout(500);
-    await getPage()
+    await this.page.waitForTimeout(500);
+    await this.page
       .getByRole("link", { name: "Click to enter text Edit" })
       .click();
-    await getPage().getByLabel("New password", { exact: true }).fill(password);
+    await this.page.getByLabel("New password", { exact: true }).fill(password);
     //await this.fillNewPasswordField(password);
     await this.fillFirstNameField(firstname);
     await this.fillLastNameField(lastname);

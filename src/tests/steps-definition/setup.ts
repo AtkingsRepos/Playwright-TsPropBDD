@@ -1,7 +1,7 @@
 
 
 import { createBdd } from "playwright-bdd";
-import { test } from "../../tests/fixtures/fixtures";
+import { test } from "src/tests/fixtures/fixtures";
 import { expect } from "@playwright/test";
 import dotenv from "dotenv";
 dotenv.config();
@@ -10,7 +10,7 @@ const { Given, When, Then } = createBdd(test);
 const username = process.env["ADMIN_USER1"];
 const password = process.env["ADMIN_USER1_PASSWORD"];
 const URL = process.env["APP_URL"];
-
+const authFile = "src/playwright/auth/admin_auth.json";
 Given(
   "As a User, I navigate to the moodle login webpage",
   async ({ loginPage, page }) => {
@@ -25,9 +25,7 @@ Given(
 When("I enter my credentials", async ({ loginPage, page }) => {
   //await page.getByRole("button", { name: "Log out" }).click();
   await loginPage.adminLogin(username, password);
-  await page
-    .context()
-    .storageState({ path: "src/helper/auth/admin_auth.json" });
+  await page.context().storageState({ path: authFile });
 });
 // When("I enter my credentials", async function () {
 

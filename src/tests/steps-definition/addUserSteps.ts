@@ -1,31 +1,43 @@
-import {
-  Given,
-  When,
-  Then,
-  Before,
-  After,
-  setDefaultTimeout,
-} from "@cucumber/cucumber";
-import { Page, expect } from "@playwright/test";
-import { getPage } from "../../hooks/hooks";
+// import {
+//   Given,
+//   When,
+//   Then,
+//   Before,
+//   After,
+//   setDefaultTimeout,
+// } from "@cucumber/cucumber";
+// import { Page, expect } from "@playwright/test";
+// import { getPage } from "../../hooks/hooks";
 
-import SiteNavigation from "../pages/siteNavigation";
-import SiteAdministrationPage from "../pages/siteAdministrationPage";
-import AddUserPage from "../pages/addUserPage";
+// import SiteNavigation from "../pages/siteNavigation";
+// import SiteAdministrationPage from "../pages/siteAdministrationPage";
+// import AddUserPage from "../pages/addUserPage";
 
-Given("I navigate to site administration page link", async function () {
-  const siteNavigation = new SiteNavigation(getPage());
-  (await siteNavigation.navigateToSiteAdministrationPage()).navigateToUsers();
-  // const siteAdministrationPage = new SiteAdministrationPage(getPage());
-  // await siteAdministrationPage.navigateToUsers();
+import { createBdd } from "playwright-bdd";
+import { test } from "src/tests/fixtures/fixtures";
+import { expect } from "@playwright/test";
+import dotenv from "dotenv";
+dotenv.config();
+const { Given, When, Then } = createBdd(test);
+const username = process.env["ADMIN_USER1"];
+const password = process.env["ADMIN_USER1_PASSWORD"];
+const URL = process.env["APP_URL"];
+
+
+Given(
+  "I navigate to site administration page link",
+  async ({ siteNavigation, page }) => {
+    await page.waitForLoadState();
+    await siteNavigation.navigateToSiteAdministrationPage().navigateToUsers;
+  }
+);
+When("I click on the Add New User link", async ({ addUserPage, page }) => {
+  await page.waitForLoadState();
+  await addUserPage.clickAddNewUserLink();
 });
-When("I click on the Add New User link", async function(){
-    const addusers = new AddUserPage(getPage(), this.log);
-  await addusers.clickAddNewUserLink();
-});
-Then("I should be able to add a new user", async function () {
-  const addusers = new AddUserPage(getPage(),this.log);
-  await addusers.fillAddUserForm(
+Then("I should be able to add a new user", async ({ addUserPage, page }) => {
+  await page.waitForLoadState();
+  await addUserPage.fillAddUserForm(
     "waneson22",
     "Wary@poay09",
     "Wane",

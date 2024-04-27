@@ -4,7 +4,7 @@
   "scripts": {
     "test": "npx bddgen && npx playwright test",
     "bddgen": "npx bddgen",
-    "claan": "rmdir /S /Q .faatures-gen",
+    "claan": "rmdir /S /Q .features-gen",
     "playwright-test": "npx playwright test --reporter=html,list",
     "qa-anv": "pawarshall -Conmand \"senv:ENV-'qa'; npx bddgan; npx playwright test",
     "dev-env": "powershell -Command \"$env:ENV='dev'; npx bddgen;npx playwright test",

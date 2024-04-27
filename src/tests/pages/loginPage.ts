@@ -1,15 +1,9 @@
 // LoginPage.ts
-
 import { Page, Locator } from "playwright";
-////import HomePage from "../pages/LandingPage";
-import { getPage } from "../../hooks/hooks";
-//import BasePage from "../pages/basePage";
 //import { Env } from "../../config/env";
 import dotenv from "dotenv";
-//import { ICreateLog } from "@cucumber/cucumber/lib/runtime/attachment_manager/index.js";
 dotenv.config();
-// import SiteNavigation from "./siteNavigation";
-// import SiteAdministrationPage from "../pages/siteAdministrationPage"
+
 
 export default class LoginPage {
   protected readonly usernameInput: Locator;

@@ -1,6 +1,6 @@
 // // siteAdministrationPage.ts
 import { Page, Locator } from "@playwright/test";
-import { getPage } from "../../hooks/hooks";
+//import { page } from "../../hooks/hooks";
 
 export default class SiteAdministrationPage {
   protected readonly siteAdminPageLink: Locator;
@@ -15,7 +15,9 @@ export default class SiteAdministrationPage {
   protected readonly developmPageLink: Locator;
   protected readonly searchPageLink: Locator;
 
-  constructor(private page: Page) {
+  constructor(protected page: Page) {
+    this.page = page;
+
     this.addCourseTab = page.getByRole("tab", {
       name: 'Courses Courses" / "',
     });

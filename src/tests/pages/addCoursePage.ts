@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
-import BasePage from "../../tests/pages/basePage";
-import { ICreateLog } from "@cucumber/cucumber/lib/runtime/attachment_manager/index.js";
+// import BasePage from "../../tests/pages/basePage";
+// import { ICreateLog } from "@cucumber/cucumber/lib/runtime/attachment_manager/index.js";
 
 export default class AddCoursePage {
   protected readonly addCourseTab: Locator;
@@ -14,6 +14,8 @@ export default class AddCoursePage {
   constructor(
     protected page: Page) {
     this.page = page;
+
+    
     this.addCourseTab = page.getByRole("tab", { name: 'Courses Courses" / "' });
     this.addNewCourseLink = page.getByRole("link", {
       name: "Add a new course",

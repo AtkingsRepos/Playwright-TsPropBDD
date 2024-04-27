@@ -5,7 +5,7 @@ import SiteAdministrationPage  from "../pages/siteAdministrationPage";
 
 export default class SiteNavigation {
   constructor(protected page: Page) {
-    
+    this.page = page;
   }
 
   // async navigateToUserHomePage(): Promise<HomePage> {

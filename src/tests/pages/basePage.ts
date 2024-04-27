@@ -1,12 +1,17 @@
-import { ICreateLog } from "@cucumber/cucumber/lib/runtime/attachment_manager/index.js";
+
 import { expect, Locator, Page } from "@playwright/test";
+import { createBdd } from "playwright-bdd";
+import { test } from "../fixtures/fixtures";
+import dotenv from "dotenv";
+dotenv.config();
+const { Given, When, Then } = createBdd(test);
+
 
 export default class BasePage {
   protected page: Page;
-  protected log:ICreateLog;
-  constructor(page: Page,log:ICreateLog) {
+  //protected log:ICreateLog;
+  constructor(page: Page) {
     this.page = page;
-    this.log = log;
   }
   // Common method to navigate to a URL
   async navigateTo(url: any) {

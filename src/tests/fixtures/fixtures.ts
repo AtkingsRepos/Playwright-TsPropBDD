@@ -1,11 +1,16 @@
 import { test as base } from "playwright-bdd";
-import LandingPage from "../pages/LandingPage";
-import AddCoursePage from "../pages/addCoursePage";
-import GradesPage from "../pages/gradesPage";
-import LoginPage from "../pages/loginPage";
-import SiteAdministrationPage from "../pages/siteAdministrationPage";
-import SiteNavigation from "../pages/siteNavigation";
+import LandingPage from "../../tests/pages/LandingPage";
+import AddCoursePage from "../../tests/pages/addCoursePage";
+import GradesPage from "../../tests/pages/gradesPage";
+import { getPage } from "src/hooks/hooks";
+import AddUserPage from "../../tests/pages/addUserPage";
+import LoginPage from "../../tests/pages/loginPage";
+import SiteAdministrationPage from "../../tests/pages/siteAdministrationPage";
+import SiteNavigation from "../../tests/pages/siteNavigation";
+import fs from "fs";
+import path from "path";
 
+export * from "@playwright/test";
 // const {
 //   LandingPage,
 //   AddCoursePage,
@@ -20,11 +25,12 @@ import SiteNavigation from "../pages/siteNavigation";
 // }
 
 export const test = base.extend({
+  
   landingPage: async ({ page }, use) => {
     const landingpage = new LandingPage(page);
     await use(landingpage);
   },
-  siteadministrationpage: async ({ page }, use) => {
+  siteAdministrationPage: async ({ page }, use) => {
     const siteadministrationpage = new SiteAdministrationPage(page);
     await use(siteadministrationpage);
   },
@@ -43,5 +49,9 @@ export const test = base.extend({
   loginPage: async ({ page }, use) => {
     const loginpage = new LoginPage(page);
     await use(loginpage);
+  },
+  addUserPage: async ({ page }, use) => {
+    const adduserPage = new AddUserPage(page);
+    await use(adduserPage);
   },
 });
