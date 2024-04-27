@@ -38,6 +38,13 @@ steps{
 echo "Functional Test success"
 }
 }
+stage('Generating report'){
+steps {
+archiveArtifacts: "cucumber-report/report.html"
+}
+}
+}
+}
 // stage('Generate Cucumber HTML report'){
 //         steps{
       
@@ -48,11 +55,5 @@ echo "Functional Test success"
        
 // }
 //}
-stage ("Generating report"){
-               steps {
-                    archiveArtifacts "cucumber-report/report.html"
-                }
-            }
-}
-}
+
 
