@@ -48,9 +48,8 @@ echo "Functional Test success"
        
 // }
 //}
-post {
+stage ("Generating report"){
                 always {
-                    // Archive HTML report as a Jenkins artifact
                     archiveArtifacts "cucumber-report/report.html"
                 }
             }
