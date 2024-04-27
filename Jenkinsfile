@@ -40,14 +40,17 @@ echo "Functional End2End Test success"
 }
 stage('Generate Cucumber HTML report'){
         steps{
-        reporter: [
-    cucumberReporter("html", {
-      outputFile: "cucumber-report/report.html",
-    }),
-  ],
+        cucumber buildStatus:"UNSTABLE",
+        fileIncludePattern: "**/cucumber-report/report.html",
+        jsonReportDirectory: "cucumber-report/"
        
 }
 }
 }
 }
 
+reporter: [
+    cucumberReporter("html", {
+      outputFile: "cucumber-report/report.html",
+    }),
+  ],
