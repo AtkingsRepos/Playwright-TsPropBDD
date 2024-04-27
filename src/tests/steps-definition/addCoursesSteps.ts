@@ -1,9 +1,6 @@
-
 import { createBdd } from "playwright-bdd";
 import { test } from "src/tests/fixtures/fixtures";
 import { expect } from "@playwright/test";
-import dotenv from "dotenv";
-dotenv.config();
 const { Given, When, Then } = createBdd(test);
 
 Given("I am on the Site Administration page",

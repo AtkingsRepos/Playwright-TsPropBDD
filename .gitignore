@@ -10,6 +10,9 @@
 
 **/config/env.ts
 /test-results/
+*./playwright/auth/admin_auth.json/
+*./playwright/**.json
+*./playwright/
 
 *.txt
 # .runTest.bat
@@ -156,6 +159,12 @@ dist
 
 # tests
 test-results
+playwright/auth
+/playwright/auth/admin_auth.json
+**./playwright/**.json/
+**./playwright/**.json/
+config
+hooks/
 playwright-report
 cucumber-report
 **/.features-gen/**/*.spec.js

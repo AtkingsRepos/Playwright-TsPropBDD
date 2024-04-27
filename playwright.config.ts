@@ -94,28 +94,27 @@ export default defineConfig({
       },
       //dependencies: ["setup"],
     },
-    // {
-    //   name: "webkit",
-    //   use: {
-    //     ...devices["Desktop Safari"],
-    //     // Use prepared auth state.
-    //     storageState: authFile,
-    //     bypassCSP: true,
-    //     testIdAttribute: "pw-test-id",
-    //     contextOptions: {
-    //       screen: {
-    //         width: 1920,
-    //         height: 1040,
-    //       },
-    //       viewport: {
-    //         width: 1920,
-    //         height: 1040,
-    //       },
-
-    //     }
-    //     //     // dependencies: ["setup"],
-    //   }
-    // },
+    {
+      name: "webkit",
+      use: {
+        ...devices["Desktop Safari"],
+        // Use prepared auth state.
+        storageState: authFile,
+        bypassCSP: true,
+        testIdAttribute: "pw-test-id",
+        contextOptions: {
+          screen: {
+            width: 1920,
+            height: 1040,
+          },
+          viewport: {
+            width: 1920,
+            height: 1040,
+          },
+        },
+        //     // dependencies: ["setup"],
+      },
+    },
     //// {
     //   name: "firefox",
     //   use: {
@@ -164,7 +163,7 @@ export default defineConfig({
     //trace: "on-first-retry",
     headless: false,
     //viewport: null,//{ width: 1920, height: 1040 },
-    actionTimeout: 2000,
+    actionTimeout: 90000,
     ignoreHTTPSErrors: true,
   },
 });

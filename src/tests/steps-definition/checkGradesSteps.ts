@@ -1,18 +1,12 @@
 import { createBdd } from "playwright-bdd";
-import { getPage } from "../../hooks/hooks";
 import { test } from "../fixtures/fixtures";
 import { expect } from "@playwright/test";
-import dotenv from "dotenv";
-dotenv.config();
 const { Given, When, Then,Before,After, BeforeAll } = createBdd(test);
-const username = process.env["ADMIN_USER1"];
-const password = process.env["ADMIN_USER1_PASSWORD"];
-const URL = process.env["APP_URL"];
 
 
 Given("I am on the grades tab", async ({siteNavigation,loginPage, page }) => {
   console.log(">>>>>>>:Clicking Grades Link Page>>>>>>");
-  await siteNavigation.navigateToSiteAdministrationPage().navigateToGrades;
+  (await siteNavigation.navigateToSiteAdministrationPage()).navigateToGrades;
   console.log(
     ">>>>>>>:Clicked on Grades Link Page and navigated to Grades>>>>>>"
   );

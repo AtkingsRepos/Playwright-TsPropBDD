@@ -1,34 +1,14 @@
-// import {
-//   Given,
-//   When,
-//   Then,
-//   Before,
-//   After,
-//   setDefaultTimeout,
-// } from "@cucumber/cucumber";
-// import { Page, expect } from "@playwright/test";
-// import { getPage } from "../../hooks/hooks";
-
-// import SiteNavigation from "../pages/siteNavigation";
-// import SiteAdministrationPage from "../pages/siteAdministrationPage";
-// import AddUserPage from "../pages/addUserPage";
-
 import { createBdd } from "playwright-bdd";
 import { test } from "src/tests/fixtures/fixtures";
 import { expect } from "@playwright/test";
-import dotenv from "dotenv";
-dotenv.config();
 const { Given, When, Then } = createBdd(test);
-const username = process.env["ADMIN_USER1"];
-const password = process.env["ADMIN_USER1_PASSWORD"];
-const URL = process.env["APP_URL"];
 
 
 Given(
   "I navigate to site administration page link",
   async ({ siteNavigation, page }) => {
     await page.waitForLoadState();
-    await siteNavigation.navigateToSiteAdministrationPage().navigateToUsers;
+    (await siteNavigation.navigateToSiteAdministrationPage()).navigateToUsers;
   }
 );
 When("I click on the Add New User link", async ({ addUserPage, page }) => {
