@@ -39,17 +39,13 @@ echo "Functional Test success"
 }
 }
 stage('Generate Cucumber HTML report'){
-steps{
-publishHTML([
-allowMissing: false,
-alwaysLinkToLastBuild: false,
-keepAll: true,
-reportDir: 'cucumber-report',
-reportFiles: 'report.html',
-reportName: 'Cucumber HTML Report'
-])
+        steps{
+        cucumber buildStatus:"UNSTABLE",
+        fileIncludePattern: "**/cucumber-report.json",
+        jsonReportDirectory: "test-results/"
+       
 }
 }
-}}
-
+}
+}
 
