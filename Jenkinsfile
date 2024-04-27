@@ -38,18 +38,20 @@ steps{
 echo "Functional Test success"
 }
 }
-stage('Generating report'){
-steps {
-archiveArtifacts: "cucumber-report/report.html"
+stage('Generate Cucumber HTML report'){
+steps{
+publishHTML([
+allowMissing: false,
+alwaysLinkToLastBuild: false,
+keepAll: true,
+reportDir: 'path/to/your/cucumber/report',
+reportFiles: 'index.html',
+reportName: 'Cucumber HTML Report'
+])
+
 }
 }
-}
-}
-// stage('Generate Cucumber HTML report'){
-//         steps{
-      
-//     cucumberReporter("html", {
-//       outputFile: "cucumber-report/report.html",
+
 //     }),
   
        
