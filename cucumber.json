@@ -5,8 +5,9 @@
     },
     "dryRun": false,
     "format": [
-      "html:test-results/report/cucumber-report.html",
-      "json:test-results/report/cucumber-report.json"
+      "html:cucumber-report/report.html",
+      "json:cucumber-report/report.json"
+
     ]
   }
 }

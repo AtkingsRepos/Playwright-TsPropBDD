@@ -4,8 +4,8 @@ const executionStartTime: any = new Date(); // Get the current date and time
 const executionEndTime: any = new Date();
 
 multipleCucumberHtmlReporter.generate({
-  jsonDir: "./test-results/report/",
-  reportPath: "./test-results/report/",
+  jsonDir: "cucumber-report/report.json",
+  reportPath: "cucumber-report/",
   reportName: "Playwright Automation Test Report",
   displayDuration: true,
   displayReportTime: true,
