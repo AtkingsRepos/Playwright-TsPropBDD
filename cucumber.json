@@ -4,6 +4,7 @@
       "snippetInterface": "async-await"
     },
     "dryRun": false,
+    "publish":true,
     "format": [
       "html:cucumber-report/report.html",
       "json:cucumber-report/report.json"
