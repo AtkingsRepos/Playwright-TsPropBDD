@@ -40,10 +40,9 @@ echo "Functional Test success"
 }
 stage('Generate Cucumber HTML report'){
         steps{
-        'npm run posttest'
+        bat 'npm run posttest'
         echo "Generated Cucumber HTML report"
-       
-}
+       }
 }
 }
 }
