@@ -1,6 +1,8 @@
 import { createBdd } from "playwright-bdd";
 import { test } from "src/tests/fixtures/fixtures";
 import { expect } from "@playwright/test";
+import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 import dotenv from "dotenv";
 dotenv.config();
 const { Given, When, Then } = createBdd(test);
@@ -41,6 +43,7 @@ Then("I should be logged in", async ({ loginPage, page }) => {
   await loginPage.loggInUserVerification(username);
   const pagetitle = await loginPage.getPageTitle();
   await expect(pagetitle).toEqual("Dashboard | Taribo-Elixir");
+  await allure.severity(Severity.CRITICAL);
   console.log(`>>>>>>>>>page title is :",${pagetitle} `);
   console.log(">>>>>>>> Thanks !!!!!");
 

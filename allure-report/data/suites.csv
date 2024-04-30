@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Wed May 01 00:46:52 BST 2024","Wed May 01 00:47:07 BST 2024","14317","chromium","src\tests\features\setup.feature.spec.js","Setup storage state so that login details could be re-used","","","admin successfully logs in and login state is stored",""
+"passed","Wed May 01 00:46:25 BST 2024","Wed May 01 00:46:41 BST 2024","15935","chromium","src\tests\features\addCourse.feature.spec.js","Add Course,","","","Add Courses for students",""
+"passed","Wed May 01 00:46:41 BST 2024","Wed May 01 00:46:47 BST 2024","6590","chromium","src\tests\features\addUser.feature.spec.js","User management","","","Admin adds new user",""
+"passed","Wed May 01 00:46:47 BST 2024","Wed May 01 00:46:52 BST 2024","5022","chromium","src\tests\features\checkGrades.feature.spec.js","Grades setting Edit grades feature","","","Edit grades and save changes",""

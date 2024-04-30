@@ -1,0 +1,391 @@
+{
+  "config": {
+    "configFile": "Q:\\PlaywrightBDDModern\\Playwright-TypeScript_ProperBDD_New\\playwright.config.ts",
+    "rootDir": "Q:/PlaywrightBDDModern/Playwright-TypeScript_ProperBDD_New/.features-gen",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "results.json"
+        }
+      ],
+      [
+        "Q:\\PlaywrightBDDModern\\Playwright-TypeScript_ProperBDD_New\\node_modules\\allure-playwright\\dist\\index.js",
+        {
+          "outputFolder": "allure-results"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "Q:/PlaywrightBDDModern/Playwright-TypeScript_ProperBDD_New/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "Q:/PlaywrightBDDModern/Playwright-TypeScript_ProperBDD_New/.features-gen",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.42.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "src\\tests\\features\\addCourse.feature.spec.js",
+      "file": "src/tests/features/addCourse.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Add Course,",
+          "file": "src/tests/features/addCourse.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Add Courses for students",
+              "ok": true,
+              "tags": [
+                "AddCourses",
+                "Regression",
+                "Smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 9358,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the Site Administration page",
+                          "duration": 2852
+                        },
+                        {
+                          "title": "When I navigate to Course link",
+                          "duration": 90
+                        },
+                        {
+                          "title": "Then I should be able to add a course",
+                          "duration": 4845
+                        }
+                      ],
+                      "startTime": "2024-04-30T21:08:57.129Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3201f39ce067873e8b0c-4272e550404be06d253f",
+              "file": "src/tests/features/addCourse.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "src\\tests\\features\\addUser.feature.spec.js",
+      "file": "src/tests/features/addUser.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "User management",
+          "file": "src/tests/features/addUser.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Admin adds new user",
+              "ok": true,
+              "tags": [
+                "AddUsers",
+                "Regression",
+                "Smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 6306,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I navigate to site administration page link",
+                          "duration": 2294
+                        },
+                        {
+                          "title": "When I click on the Add New User link",
+                          "duration": 605
+                        },
+                        {
+                          "title": "Then I should be able to add a new user",
+                          "duration": 2247
+                        }
+                      ],
+                      "startTime": "2024-04-30T21:09:06.937Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7d9f44408846ef8ec10a-6a412156667c6b4422d4",
+              "file": "src/tests/features/addUser.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "src\\tests\\features\\checkGrades.feature.spec.js",
+      "file": "src/tests/features/checkGrades.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Grades setting Edit grades feature",
+          "file": "src/tests/features/checkGrades.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Edit grades and save changes",
+              "ok": true,
+              "tags": [
+                "CheckGrades",
+                "Regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 4954,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": ">>>>>>>:Clicking Grades Link Page>>>>>>\n"
+                        },
+                        {
+                          "text": ">>>>>>>:Clicked on Grades Link Page and navigated to Grades>>>>>>\n"
+                        },
+                        {
+                          "text": ">>>>>>>:Clicking on Grades Tab>>>>>>\n"
+                        },
+                        {
+                          "text": ">>> Iam on Grades Tab\n"
+                        },
+                        {
+                          "text": ">>>>>>>:Clicked on Grades Tab and navigating letters link>>>>>>\n"
+                        },
+                        {
+                          "text": ">>>>>>>:Clicked on leter link>>>>>>\n"
+                        },
+                        {
+                          "text": ">>>>>>>:Clicking  on Edit button>>>>>>\n"
+                        },
+                        {
+                          "text": ">>>>>>>:Clicked on Edit button and navigating to save changes>>>>>>\n"
+                        },
+                        {
+                          "text": ">>>>>>>:Clicked on save button>>>>>>\n"
+                        },
+                        {
+                          "text": ">>>>>>>>> \u001b[33mtrue\u001b[39m\n"
+                        },
+                        {
+                          "text": ">>>>>>>>>>expected Text: The default grade letters are currently overridden.\n×\nDismiss this notification\n"
+                        },
+                        {
+                          "text": ">>>>>>>>>>Actual Text  :   The default grade letters are currently overridden.\n×\nDismiss this notification\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given I am on the grades tab",
+                          "duration": 2064
+                        },
+                        {
+                          "title": "When I go to grades setting",
+                          "duration": 1019
+                        },
+                        {
+                          "title": "Then I should edit grades,save the changes",
+                          "duration": 833
+                        }
+                      ],
+                      "startTime": "2024-04-30T21:09:13.260Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "14873f1e071b817aedcc-b213d8f1c3eadb80b29a",
+              "file": "src/tests/features/checkGrades.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "src\\tests\\features\\setup.feature.spec.js",
+      "file": "src/tests/features/setup.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Setup storage state so that login details could be re-used",
+          "file": "src/tests/features/setup.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "admin successfully logs in and login state is stored",
+              "ok": true,
+              "tags": [
+                "Setup"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 6344,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": ">>>>Test Execution Started at:  30/04/2024, 22:09:19\n"
+                        },
+                        {
+                          "text": ">>>>>>>>> Logged in user  \n                Hi, Lima! 👋\n             has been verified successfully!\n"
+                        },
+                        {
+                          "text": ">>>>>>>>>page title is :\",Dashboard | Taribo-Elixir \n"
+                        },
+                        {
+                          "text": ">>>>>>>> Thanks !!!!!\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given As a User, I navigate to the moodle login webpage",
+                          "duration": 603
+                        },
+                        {
+                          "title": "When I enter my credentials",
+                          "duration": 4496
+                        },
+                        {
+                          "title": "Then I should be logged in",
+                          "duration": 218
+                        }
+                      ],
+                      "startTime": "2024-04-30T21:09:18.228Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e5be93748fc39581361-f6597973c11b10bba6ff",
+              "file": "src/tests/features/setup.feature.spec.js",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-04-30T21:08:55.589Z",
+    "duration": 30513.115999999998,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

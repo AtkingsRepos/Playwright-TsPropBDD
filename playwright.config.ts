@@ -1,6 +1,10 @@
 import { defineConfig, devices } from "@playwright/test";
 import { defineBddConfig, cucumberReporter } from "playwright-bdd";
+import { testPlanFilter } from "allure-playwright/dist/testplan";
+import { allure } from "allure-playwright";
+import { Severity } from "allure-js-commons";
 import dotenv from "dotenv";
+import { outputFile } from "fs-extra";
 dotenv.config();
 
 const authFile = "src/playwright/auth/admin_auth.json";
@@ -13,11 +17,13 @@ const testDir = defineBddConfig({
 
 export default defineConfig({
   testDir,
+   grep: testPlanFilter(),
   reporter: [
-    cucumberReporter("html", {
-      outputFile: "cucumber-report/report.html",
-    }),
+      ["line"], ["allure-playwright"],
+    ["json", {outputFile: "cucumber-report/report"}],
+     ["allure-playwright", { outputFolder: "allure-results" }],
   ],
+
   fullyParallel: false,
   retries: 0,
   workers: 1,
@@ -59,71 +65,5 @@ export default defineConfig({
 
       //dependencies: ["setup"],
     },
-
-    // {
-    //   name: "Microsoft Edge",
-    //   use: {
-    //     ...devices["Desktop Edge"],
-    //     storageState: authFile,
-    //     channel: "msedge",
-    //     bypassCSP: true,
-    //     testIdAttribute: "pw-test-id",
-    //     contextOptions: {
-    //       screen: {
-    //         width: 1920,
-    //         height: 1040,
-    //       },
-    //     },
-    //     viewport: {
-    //       width: 1920,
-    //       height: 1040,
-    //     },
-    //     // Use prepared auth state.
-    //   },
-    //   // dependencies: ["setup"],
-    // },
-
-    // {
-    //   name: "Google Chrome",
-    //   use: {
-    //     ...devices["Desktop Chrome"],
-    //     storageState: authFile,
-    //     bypassCSP: true,
-    //     channel: "chrome",
-    //     testIdAttribute: "pw-test-id",
-    //     contextOptions: {
-    //       screen: {
-    //         width: 1920,
-    //         height: 1040,
-    //       },
-    //     },
-    //     viewport: {
-    //       width: 1920,
-    //       height: 1040,
-    //     },
-    //   },
-    //   //dependencies: ["setup"],
-    // },
-    // {
-    //   name: "webkit",
-    //   use: {
-    //     ...devices["Desktop Safari"],
-    //     // Use prepared auth state.
-    //     storageState: authFile,
-    //     bypassCSP: true,
-    //     testIdAttribute: "pw-test-id",
-    //     contextOptions: {
-    //       screen: {
-    //         width: 1280,
-    //         height: 720,
-    //       },
-    //       viewport: {
-    //         width: 1280,
-    //         height: 720,
-    //       },
-    //     },
-    //     //     // dependencies: ["setup"],
-    //   },
-    // },
   ],
 });
