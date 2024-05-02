@@ -5,7 +5,7 @@
     "test22": "npx playwright test",
     "testbdd": "npx bddgen && npx playwright test",
     "bddgen": "npx bddgen",
-    "clean:reports": "rimraf allure-report allure-results && mkdirp allure-report allure-results",
+   "clean:reports": "rimraf allure-report allure-results && mkdirp allure-report allure-results",
     "generate:reports": "npx allure generate ./allure-results --clean",
     "open:reports": "npx allure open ./allure-report",
     "pretest": "npm run clean:reports",

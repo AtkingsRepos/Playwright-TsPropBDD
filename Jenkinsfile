@@ -38,21 +38,18 @@ steps{
 echo "Functional Test success"
 }
 }
-
-// stage('Generate Cucumber HTML report'){
-//         steps{
-//         cucumber buildStatus:"UNSTABLE",
-//         fileIncludePattern: "**/cucumber-report.json",
-//         jsonReportDirectory: "test-results/"
-       
-// }
-// }
-stage('Generate Cucumber HTML report'){
-        steps{
-        bat 'npm run posttest'
-        echo "Allure report"
-       }
-}
+stage('Generate Test reports') {
+    steps {
+    script {
+            allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'target/allure-results']]
+            ])
+    }
+    }
 }
 }
 

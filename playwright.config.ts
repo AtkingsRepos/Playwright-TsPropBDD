@@ -20,8 +20,8 @@ export default defineConfig({
    grep: testPlanFilter(),
   reporter: [
       ["line"], ["allure-playwright"],
-    ["json", {outputFile: "cucumber-report/report"}],
-     ["allure-playwright", { outputFolder: "allure-results" }],
+      ["json", {outputFile: "cucumber-report/report"}],
+      ["allure-playwright", { outputFolder: "allure-results" }],
   ],
 
   fullyParallel: false,

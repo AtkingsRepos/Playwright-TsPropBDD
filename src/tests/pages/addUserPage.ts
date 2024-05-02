@@ -1,9 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 import { createBdd } from "playwright-bdd";
 import { test } from "src/tests/fixtures/fixtures";
-// import { getPage } from "../../hooks/hooks";
-// //import BasePage from "../pages/basePage";
-// //import { ICreateLog } from "@cucumber/cucumber/lib/runtime/attachment_manager/index.js";
 
 export default class AddUserPage {
   protected readonly addNewUserLink: Locator;
