@@ -52,4 +52,4 @@ stage('Generate Test reports') {
     }
 }
 }
-
+}
