@@ -16,10 +16,10 @@
     "watch:bdd": "nodemon -w ./features -w ./steps -e feature,js,ts --exec 'npx bddgen'",
     "watch:pw": "playwright test --ui",
     "watch": "run-p watch:*",
-    "smoke": "npx bddgen || npx playwright test --grep @Smoke",
-    "checkGrades": "npx playwright test --grep @CheckGrades",
-    "addcourses": "npx playwright test --grep @AddCourses",
-    "Setup": "npx playwright test --grep @Setup",
+    "smoke": "npm run clean:generateReport && npx playwright test --grep @Smoke",
+    "checkGrades": "npm run clean:generateReport && npx playwright test --grep @CheckGrades",
+    "addcourses": "npm run clean:generateReport && npx playwright test --grep @AddCourses",
+    "Setup": "npm run clean:generateReport && npx playwright test --grep @Setup",
     "regression": "npm run clean:generateReport  && npx playwright test --grep @Regression "
   },
   "devDependencies": {
