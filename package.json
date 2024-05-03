@@ -12,15 +12,14 @@
     "posttest": "npm run generate:reports && npm run open:reports",
     "execute:script": "npx playwright test",
     "test": "npm run execute:script || npm run posttest",
-    "clean:generateReport": "npm run clean:reports",
     "watch:bdd": "nodemon -w ./features -w ./steps -e feature,js,ts --exec 'npx bddgen'",
     "watch:pw": "playwright test --ui",
     "watch": "run-p watch:*",
-    "smoke": "npm run clean:generateReport  && npx playwright test --grep @Smoke",
+    "smoke": "npx bddgen && npx playwright test --grep @Smoke",
     "checkGrades": "npx playwright test --grep @CheckGrades",
     "addcourses": "npx playwright test --grep @AddCourses",
     "Setup": "npx playwright test --grep @Setup",
-    "regression": "npm run clean:generateReport  && npx playwright test --grep @Regression "
+    "regression": "npx playwright test --grep @Regression "
   },
   "devDependencies": {
     "@cucumber/html-formatter": "21.3.0",
