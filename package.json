@@ -19,7 +19,7 @@
     "smoke": "npm run clean:generateReport && npx playwright test --grep @Smoke",
     "checkGrades": "npm run clean:generateReport && npx playwright test --grep @CheckGrades",
     "addcourses": "npm run clean:generateReport && npx playwright test --grep @AddCourses",
-    "Setup": "npm run clean:generateReport && npx playwright test --grep @Setup",
+    "Setup": "npx bddgen && npx playwright test --grep @Setup",
     "regression": "npm run clean:generateReport  && npx playwright test --grep @Regression "
   },
   "devDependencies": {
