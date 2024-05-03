@@ -17,7 +17,7 @@
     "watch:pw": "playwright test --ui",
     "watch": "run-p watch:*",
     "smoke": "npx bddgen && npx playwright test --grep @Smoke && npm run clean:reports",
-    "checkGrades": "npx bddgen && npx playwright test --grep @CheckGrades && npm run clean:reports",
+    "checkGrades": "npx bddgen || npx playwright test --grep @CheckGrades && npm run clean:reports",
     "addcourses": "npx bddgen && npx playwright test --grep @AddCourses && npm run clean:reports",
     "Setup": "npx bddgen && npx playwright test --grep @Setup && npm run clean:reports",
     "regression": "npx bddgen && npx playwright test --grep @Regression && npm run clean:reports"
