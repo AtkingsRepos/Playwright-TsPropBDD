@@ -9,6 +9,7 @@
     "generate:reports": "npx allure generate ./allure-results --clean",
     "open:reports": "npx allure open ./allure-report",
     "pretest": "npm run clean:reports",
+    "clean:generateReport": "",
     "posttest": "npm run generate:reports && npm run open:reports",
     "execute:script": "npx playwright test",
     "test": "npm run execute:script || npm run posttest",
@@ -19,7 +20,7 @@
     "checkGrades": "npx bddgen && npx playwright test --grep @CheckGrades",
     "addcourses": "npx bddgen && npx playwright test --grep @AddCourses",
     "Setup": "npx bddgen && npx playwright test --grep @Setup",
-    "regression": "npx bddgen && npx playwright test --grep @Regression "
+    "regression": "npx bddgen && npx playwright test --grep @Regression || npm run clean:reports"
   },
   "devDependencies": {
     "@cucumber/html-formatter": "21.3.0",
