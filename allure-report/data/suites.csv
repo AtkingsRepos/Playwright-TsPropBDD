@@ -1,4 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat May 04 15:54:50 BST 2024","Sat May 04 15:54:56 BST 2024","5524","chromium","src\tests\features\addUser.feature.spec.js","User management","","","Admin adds new user",""
-"passed","Sat May 04 15:54:56 BST 2024","Sat May 04 15:55:00 BST 2024","4766","chromium","src\tests\features\checkGrades.feature.spec.js","Grades setting Edit grades feature","","","Edit grades and save changes",""
-"passed","Sat May 04 15:54:41 BST 2024","Sat May 04 15:54:50 BST 2024","9192","chromium","src\tests\features\addCourse.feature.spec.js","Add Course,","","","Add Courses for students",""
